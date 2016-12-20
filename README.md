@@ -1,7 +1,7 @@
 ### Synopsis
 
 This is my research on competitive programming. It's been a while now that I have been participating in competitive programming, and now, I want to delve deeper into the concepts.
-This Field is fascinating and want to explore this field considering scala as my primary language. I will be using CodeForces for my voyage.
+This Field is fascinating and want to explore this field considering scala as my primary language. I will be using Hackerearth for my voyage.
 
 ***
 
