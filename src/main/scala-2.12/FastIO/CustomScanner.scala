@@ -1,6 +1,6 @@
 package FastIO
 
-import java.io.{BufferedReader, LineNumberReader, Reader}
+import java.io.{BufferedReader, InputStreamReader, LineNumberReader, Reader}
 import java.util.StringTokenizer
 
 /**
@@ -14,6 +14,8 @@ class CustomScanner(reader: LineNumberReader) extends Iterator[String] with Auto
   def this(reader: BufferedReader) = this(new LineNumberReader(reader));
 
   def this(reader: Reader) = this(new BufferedReader(reader));
+
+  def this() = this(new BufferedReader(new InputStreamReader(System.in)))
 
 
   /**
