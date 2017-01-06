@@ -11,38 +11,38 @@ import scala.util.Sorting._
   */
 @RunWith(classOf[JUnitRunner])
 class MonkandStudentsTest extends FlatSpec {
-  "MonkandStudentsTest" should " solve the lattice problem " in {
-    println("here")
-    val size = randSize()
-    val arr = new Array[Line](size)
-    val arrToBe = new Array[Line](size)
-    for (i <- 0 to size - 1) {
-      //println("here")
-      val line = new Line(randLong(), randLong(), randLong(), randLong(), i)
-      //println("here")
-      findLatticePoints(line)
-      arr(i) = line
-      val newLine = new Line(line.getX1(), line.getY1(), line.getX2(), line.getY2(), i)
-      newLine.setLatticePoints()
-      arrToBe(i) = newLine
-      println(line.getX1() + " " + line.getY1() + " " + line.getX2() + " " + line.getY2() + " " + size + " " + arr(i).lattice)
-      assert(arrToBe(i).lattice === arr(i).lattice)
-    }
-    quickSort(arr)
-    quickSort(arrToBe)
-    for (i <- 0 to size - 1) {
-      println(arr(i).lattice + " " + arrToBe(i).lattice)
-      assert(arr(i).getIndex() === arrToBe(i).getIndex())
-    }
-    val q = randSize()
-    for (i <- 1 to q) {
-      val x = randX()
-      val myAns = MonkandStudents.bsearch(arrToBe, x)
-      val trueAns = findBruteForce(arr, x)
-      println(trueAns + " " + myAns)
-      assert(trueAns == myAns)
-    }
-  }
+//  "MonkandStudentsTest" should " solve the lattice problem " in {
+//    println("here")
+//    val size = randSize()
+//    val arr = new Array[Line](size)
+//    val arrToBe = new Array[Line](size)
+//    for (i <- 0 to size - 1) {
+//      //println("here")
+//      val line = new Line(randLong(), randLong(), randLong(), randLong(), i)
+//      //println("here")
+//      findLatticePoints(line)
+//      arr(i) = line
+//      val newLine = new Line(line.getX1(), line.getY1(), line.getX2(), line.getY2(), i)
+//      newLine.setLatticePoints()
+//      arrToBe(i) = newLine
+//      println(line.getX1() + " " + line.getY1() + " " + line.getX2() + " " + line.getY2() + " " + size + " " + arr(i).lattice)
+//      assert(arrToBe(i).lattice === arr(i).lattice)
+//    }
+//    quickSort(arr)
+//    quickSort(arrToBe)
+//    for (i <- 0 to size - 1) {
+//      println(arr(i).lattice + " " + arrToBe(i).lattice)
+//      assert(arr(i).getIndex() === arrToBe(i).getIndex())
+//    }
+//    val q = randSize()
+//    for (i <- 1 to q) {
+//      val x = randX()
+//      val myAns = MonkandStudents.bsearch(arrToBe, x)
+//      val trueAns = findBruteForce(arr, x)
+//      println(trueAns + " " + myAns)
+//      assert(trueAns == myAns)
+//    }
+ // }
 
   def findBruteForce(arr: Array[Line], x: Long): Int = {
     for (i <- 0 to arr.size - 1) {
