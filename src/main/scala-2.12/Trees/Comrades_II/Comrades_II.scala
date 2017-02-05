@@ -9,40 +9,32 @@ object Comrades_II {
   def main(args: Array[String]): Unit = {
     val customScanner = new CustomScanner()
     val t = customScanner.nextInt()
-    for (i <- 0 until t) {
-      val n = customScanner.nextLong()
-      val arr = new Array[List[Long]](n.toInt + 1)
-      for (j <- 1 to n.toInt) {
-        if (arr(j) == null) arr(j) = List()
-        val temp = customScanner.nextLong()
-        if (arr(temp.toInt) == null) arr(temp.toInt) = List()
-        arr(temp.toInt) :+= j.toLong
+    for (test <- 1 to t) {
+      val size = customScanner.nextInt()
+      val arr = customScanner.nextLine().split(" ").map(_.toInt)
+      var ans: Long = size.toLong * (size.toLong - 1L) / 2L
+      val map = Array.ofDim[Long](size + 1)
+      for (i <- 0 until size) {
+        var y = arr(i)
+        map(y) += 1L
       }
-      val handshake: Long = findAns(arr);
-      val fist: Long = n * (n - 1) / 2L - handshake
-      println(handshake + " " + fist)
+      val visited = Array.ofDim[Boolean](size + 1)
+      for (i <- 1 to size) {
+        if (!visited(i)) {
+          visited(i) = true
+          var childCount = map(i)
+          var y = arr(i - 1)
+          while (y != 0) {
+            
+          }
+        }
+      }
+      val handshake: Long = map.sum
+      println(handshake + " " + (ans - handshake))
     }
   }
 
-  def findAns(arr: Array[List[Long]]): Long = {
-    var ans = 0L
-    def innerFunc(list: List[Long], pos: Long): Long = {
-      var innerAns = 0L
-      if (arr(pos.toInt).length == 0) 1
-      else {
-        for {
-          i <- list
-        } yield {
-          innerAns += innerFunc(arr(i.toInt), i)
-        }
-        if (pos != 0)
-          ans += innerAns
-        innerAns + 1
-      }
-    }
-    innerFunc(arr(0), 0)
-    ans
-  }
+
 }
 
 

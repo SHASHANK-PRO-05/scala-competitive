@@ -2,12 +2,13 @@ package NumberTheory.MonkandDivisorConundrumTest
 
 import org.junit.runner.RunWith
 import org.scalatest.junit.JUnitRunner
-import org.scalatest.FlatSpec
+import org.scalatest.{DoNotDiscover, FlatSpec}
 import NumberTheory.MonkandDivisorConundrum.MonkandDivisorConundrum._
 
 /**
   * Created by home on 12/24/2016.
   */
+@DoNotDiscover
 @RunWith(classOf[JUnitRunner])
 class MonkandDivisorConundrumTest extends FlatSpec {
   //"MonkandDivisorConundrumTest" should "solve the conundrum" in {

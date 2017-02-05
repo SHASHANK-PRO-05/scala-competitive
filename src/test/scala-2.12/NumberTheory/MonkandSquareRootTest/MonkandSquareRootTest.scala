@@ -2,13 +2,13 @@ package NumberTheory.MonkandSquareRootTest
 
 import org.junit.runner.RunWith
 import org.scalatest.junit.JUnitRunner
-import org.scalatest.FlatSpec
-
+import org.scalatest.{DoNotDiscover, FlatSpec}
 import NumberTheory.MonkandSquareRoot._
 
 /**
   * Created by home on 12/24/2016.
   */
+@DoNotDiscover
 @RunWith(classOf[JUnitRunner])
 class MonkandSquareRootTest extends FlatSpec {
 //  "reverseQuadraticResidueMinima" should " be giving as brute force will do" in {

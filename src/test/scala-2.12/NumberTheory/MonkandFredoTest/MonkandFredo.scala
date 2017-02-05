@@ -1,14 +1,16 @@
 package NumberTheory.MonkandFredoTest
 
 import org.junit.runner.RunWith
-import org.scalatest.FlatSpec
+import org.scalatest.{DoNotDiscover, FlatSpec}
 import org.scalatest.junit.JUnitRunner
 import NumberTheory.MonkandFredo.MonkandFredo._
+
 import scala.collection.mutable
 
 /**
   * Created by home on 12/30/2016.
   */
+@DoNotDiscover
 @RunWith(classOf[JUnitRunner])
 class MonkandFredo extends FlatSpec {
   "MonkandFredo" should "help fredo from getting out from the problem of monk" in {
@@ -37,9 +39,11 @@ class MonkandFredo extends FlatSpec {
   def randInt(): Int = {
     (Math.random() * 100000).toInt
   }
-  def randAnB():Long={
+
+  def randAnB(): Long = {
     (Math.random() * 100).toLong
   }
+
   def rand(): Long = {
     (Math.random() * 100000).toLong
   }
