@@ -5,6 +5,7 @@ package CrackingTheCodingInterview.Chapter1_ArraysAndStrings.Q1
   * This class is will help in finding whether the given string
   * has unique characters or not.
   */
+
 class UniqueString(private val string: String) {
 
   /**
@@ -48,6 +49,44 @@ class UniqueString(private val string: String) {
         || (i < newString.length - 1 && newString.charAt(i) == newString.charAt(i + 1))) {
         return false
       }
+    }
+    true
+  }
+
+  /**
+    * This only checks a to z or A to z or 0-9 characters
+    *
+    * @return Boolean
+    */
+  def checkOnlyA_ZOra_zOr0_9(): Boolean = {
+    var uniqueChecker = 0
+    for (i <- 0 until string.length) {
+      if ((uniqueChecker >> string.charAt(i) - 'A' & 1) != 0) {
+        return false
+      }
+      uniqueChecker = uniqueChecker | (1 << string.charAt(i) - 'A')
+    }
+    true
+  }
+
+  /**
+    * This area is bug prone
+    *
+    * @return
+    */
+  def anythingFromBitWiseArrayOf4(): Boolean = {
+    val arrayChecker: Array[Long] = Array(0L, 0L, 0L, 0L)
+    for (i <- 0 until string.length) {
+      var char = string.charAt(i)
+      var index = 0
+      println(1L << 62)
+      while (char - 62 > 0) {
+        char = (char - 62).toChar
+      }
+      if ((arrayChecker(index) & (1 << char - 0)) != 0) {
+        return false
+      }
+      arrayChecker(index) = arrayChecker(index) | (1 << char - 0)
     }
     true
   }
