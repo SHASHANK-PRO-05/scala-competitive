@@ -7,10 +7,9 @@ import org.scalatest.FlatSpec
   */
 class MagicBoxTest extends FlatSpec {
   "Sum of each row" should "be equal to formula n(n^2+1)/2" in {
-    var n = (math.random() * 1000).toInt
-    if (n % 2 == 0)
-      n += 1
-    val temp = MagicBox.oddMagicBox(n)
+    var n = (math.random() * 250).toInt * 4
+
+    val temp = MagicBox.fourNType(n)
     for (i <- 0 until n) {
       var sum = 0L
       for (j <- 0 until n) {
@@ -20,10 +19,9 @@ class MagicBoxTest extends FlatSpec {
     }
   }
   "Sum of each col" should "be equal to formula n(n^2+1)/2" in {
-    var n = (Math.random() * 1000).toInt
-    if (n % 2 == 0)
-      n += 1
-    val temp = MagicBox.oddMagicBox(n)
+    var n = (math.random() * 250).toInt * 4
+
+    val temp = MagicBox.fourNType(n)
     for (i <- 0 until n) {
       var sum = 0L
       for (j <- 0 until n) {
@@ -37,10 +35,9 @@ class MagicBoxTest extends FlatSpec {
   "Sum of diagonals" should "be equal to formula n(n^2+1)/2" in {
     var sum1 = 0L
     var sum2 = 0L
-    var n = (Math.random() * 1000).toInt
-    if (n % 2 == 0)
-      n += 1
-    val temp = MagicBox.oddMagicBox(n)
+    var n = (math.random() * 250).toInt * 4
+    println(n)
+    val temp = MagicBox.fourNType(n)
     for (i <- 0 until n) {
       sum1 += temp(i)(i)
       sum2 += temp(i)(n - i - 1)

@@ -5,9 +5,9 @@ package CrackingTheCodingInterview.GroupPractice.Day2
   */
 object MagicBox {
   def main(args: Array[String]): Unit = {
-    val temp = oddMagicBox(999)
-    for (i <- 0 until 999) {
-      for (j <- 0 until 999) {
+    val temp = fourNType(8)
+    for (i <- 0 until 8) {
+      for (j <- 0 until 8) {
         print(temp(i)(j) + " ")
       }
       println()
@@ -34,5 +34,37 @@ object MagicBox {
       num += 1
     }
     array
+  }
+
+  def fourNType(n: Int): Array[Array[Long]] = {
+    if (n > 1000) {
+      println("Please read about maximum array size in a language and Big-O notation")
+      return null
+    }
+    var num = 1L
+    var num2 = n * n
+    val straight = Array.ofDim[Long](n, n)
+    val reverse = Array.ofDim[Long](n, n)
+    val actual = Array.ofDim[Long](n, n)
+    for (i <- 0 until n) {
+      for (j <- 0 until n) {
+        straight(i)(j) = num
+        num += 1
+        reverse(i)(j) = num2
+        num2 -= 1
+      }
+    }
+    for {
+      squareNumber1 <- 0 until n / 4
+      squareNumber2 <- 0 until n / 4
+      i <- 0 until 4
+      j <- 0 until 4} {
+      if (i == j || i == 4 - j - 1) {
+        actual(squareNumber1 * 4 + i)(squareNumber2 * 4 + j) = straight(squareNumber1 * 4 + i)(squareNumber2 * 4 + j)
+      }else{
+        actual(squareNumber1 * 4 + i)(squareNumber2 * 4 + j) = reverse(squareNumber1 * 4 + i)(squareNumber2 * 4 + j)
+      }
+    }
+    actual
   }
 }
