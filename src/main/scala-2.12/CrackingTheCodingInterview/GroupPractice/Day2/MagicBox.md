@@ -76,3 +76,14 @@ Merging them
 16 50 51 13 12 54 55 09 
 57 07 06 60 61 03 02 64 
 </pre>
+
+Now the last one; 4n+2 type. For that divide the magic box in four types
+<pre>
+08 01 06 26 19 24 
+03 05 07 21 23 25 
+04 09 02 22 27 20 
+35 28 33 17 10 15 
+30 32 34 12 14 16 
+31 36 29 13 18 11
+</pre>
+Fill the four quadrants as we did in first one(odd types)
