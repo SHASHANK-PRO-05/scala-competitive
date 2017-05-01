@@ -39,14 +39,15 @@ object OversizedPancakeFlipper {
                 case '-' => stringBuilder.setCharAt(j, '+')
               }
             }
-            if (!hashSet.containsKey(stringBuilder.toString()) || hashSet.get(stringBuilder.toString()) > tempNode.count + 1) {
-              //println(stringBuilder.toString() + " " + hashSet.get(stringBuilder.toString()) + " " + tempNode.count)
-              val newNode = new Node
-              newNode.string = stringBuilder.toString()
-              newNode.count = tempNode.count + 1
-              hashSet.put(stringBuilder.toString(), tempNode.count + 1)
-              stack.push(newNode)
-            }
+            if (stringBuilder.count(_ == '+') >= tempNode.string.count(_ == '+'))
+              if (!hashSet.containsKey(stringBuilder.toString()) || hashSet.get(stringBuilder.toString()) > tempNode.count + 1) {
+                //println(stringBuilder.toString() + " " + hashSet.get(stringBuilder.toString()) + " " + tempNode.count)
+                val newNode = new Node
+                newNode.string = stringBuilder.toString()
+                newNode.count = tempNode.count + 1
+                hashSet.put(stringBuilder.toString(), tempNode.count + 1)
+                stack.push(newNode)
+              }
           }
         }
         else {
