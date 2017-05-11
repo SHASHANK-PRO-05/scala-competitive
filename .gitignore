@@ -3,3 +3,4 @@ scala-competitive.iml
 out/
 project/
 target/
+*.iml
