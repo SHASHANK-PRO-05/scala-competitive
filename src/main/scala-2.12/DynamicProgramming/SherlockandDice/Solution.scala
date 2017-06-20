@@ -1,4 +1,4 @@
-package SherlockandDice
+package DynamicProgramming.SherlockandDice
 
 import FastIO.CustomScanner
 

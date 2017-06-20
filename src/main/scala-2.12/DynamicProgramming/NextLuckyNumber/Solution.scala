@@ -1,4 +1,4 @@
-package NextLuckyNumber
+package DynamicProgramming.NextLuckyNumber
 
 import FastIO.CustomScanner
 

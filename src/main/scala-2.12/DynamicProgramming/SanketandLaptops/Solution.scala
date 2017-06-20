@@ -1,4 +1,4 @@
-package SanketandLaptops
+package DynamicProgramming.SanketandLaptops
 
 import FastIO.CustomScanner
 
