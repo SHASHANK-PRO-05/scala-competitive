@@ -11,8 +11,8 @@ class Solution {
 
   def book(start: Int, end: Int): Boolean = {
     for (it <- 0 until list.size()) {
-      if (math.max(list.get(it)._1, start) < math.min(list.get()._2, end)) {
-        if (!overlapList.book(math.max(list.get(it)._1, start), math.min(list.get()._2, end))) return false
+      if (math.max(list.get(it)._1, start) < math.min(list.get(it)._2, end)) {
+        if (!overlapList.book(math.max(list.get(it)._1, start), math.min(list.get(it)._2, end))) return false
       }
     }
     list.add((start, end))
@@ -24,7 +24,7 @@ class Solution {
 
     def book(start: Int, end: Int): Boolean = {
       for (it <- 0 until list.size()) {
-        if (math.max(list.get(it)._1, start) < math.min(list.get()._2, end)) return false
+        if (math.max(list.get(it)._1, start) < math.min(list.get(it)._2, end)) return false
       }
       list.add((start, end))
     }
@@ -34,6 +34,6 @@ class Solution {
 
 object Solution {
   def main(args: Array[String]): Unit = {
-    S
+
   }
 }
